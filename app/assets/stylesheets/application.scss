@@ -13,10 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+/* Color palettes
+ *  Max Blue + Wild Blue Yonder + Cameo Pink Pastel Color Palette
+ *  Hex Codes: #d4afb9 // #d1cfe2 // #9cadce // #7ec4cf // #52b2cf
+ *  
+ *  Pastel Pink + Pale Pink + Snow White Pastel Color Palette
+ *  Hex Codes: #d3ab9e // #eac9c1 // #ebd8d0 // #fffbff // #fefeff
+ *
+ *  Alice Blue + Lavender Web + Baby Blue Eyes Pastel Color Palette
+ *  Hex Codes: #edf2fb // #d7e3fc // #ccdbfd // #c1d3fe // #abc4ff
+ */
+
  @import "bulma";
+
+ html, body {
+   background-color: #d7e3fc;
+ }
+
+ nav.navbar {
+   background-color: #7ec4cf;
+ }
 
  .navbar-brand .title {
    color: white;
+   text-shadow: 1px 1px 1px grey;
  }
 
 //  round images
@@ -29,4 +50,8 @@
 
 .notification:not(:last-child) {
   margin-bottom: -8px;
+}
+
+span.error {
+  color: red;
 }
