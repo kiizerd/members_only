@@ -1,13 +1,14 @@
+<%= javascript_pack_tag 'navbar' %>
+
 <nav class='navbar'>
   <div class="navbar-brand">      
     <%= link_to root_path, class: 'navbar-item' do %>
-      <% if member_signed_in? %>
-        <h1 class='title is-5'>Welcome <%= current_member.name %></h1>
-      <% else %>
         <h1 class='title is-5'>Member's Club</h1>
+      <% if member_signed_in? %>
+        
       <% end %>
     <% end %>
-    <div class="navbar-burger burger" data-target='navbar'>
+    <div id="navBurger" class="navbar-burger burger" data-target='navbar'>
       <span></span>
       <span></span>
       <span></span>
@@ -17,16 +18,35 @@
   <div id="navbar" class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="field is-grouped">
+        <div class="field mr-5">
           <p class="control">
-            <%= link_to 'New Post', new_post_path, class: 'button is-success is-inverted' %>
+          <% if cookies[:theme] == "light" %>
+            <%= link_to root_path(theme: 'dark'), class: 'card-icon' do %>
+              <span class="icon">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+              </span>
+            <% end %>
+          <% else %>
+            <%= link_to root_path(theme: 'light'), class: 'card-icon' do %>
+              <span class="icon">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+              </span>
+            <% end %>
+          <% end %>
           </p>
+        </div>
+        <div class="field mx-4">
+          <p class="control">
+            <%= link_to 'New Post', new_post_path, class: 'button is-info is-inverted' %>
+          </p>
+        </div>
+        <div class="field is-grouped ml-4">
           <% if member_signed_in? %>
             <p class="control">
-              <%= link_to current_member.name, edit_member_registration_path, class: 'button is-success' %>
+              <%= link_to current_member.name, edit_member_registration_path, class: 'button is-info' %>
             </p>
             <p class="control">
-              <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'button is-success' %>
+              <%= link_to 'Logout', destroy_member_session_path, method: :delete, class: 'button is-info' %>
             </p>
           <% else %>
             <p class="control">
