@@ -11,3 +11,15 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// Hide Flashes after 5 seconds
+document.addEventListener('turbolinks:load', function() {
+  setInterval(function() {
+    const notification = document.querySelector('.notification');
+    if (notification) {
+      notification.style.display = 'none';
+    } else {
+      return;
+    }
+  }, 5000);
+})
