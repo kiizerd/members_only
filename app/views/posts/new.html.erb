@@ -4,9 +4,14 @@
       <div class="column is-6">
         <h2 class="title is-2">New Post</h2>
         <hr>
-        <%= render 'form', post: @post %>
 
-        <%= link_to 'Back', posts_path %>
+        <%= render 'form', post: @post %>
+        
+        <div class="field is-pulled-right py-2">
+          <div class="control">
+            <%= link_to 'Back', posts_path, class: 'button small is-success' %>          
+          </div>
+        </div>
 
       </div>
     </div>

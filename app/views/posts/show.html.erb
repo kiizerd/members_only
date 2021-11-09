@@ -3,10 +3,16 @@
     <div class="columns is-centered">
       <div class="column is-7">
         <div class="card">
-          <header class="card-header py-2 is-primary">
+          <header class="card-header py-2 is-primary is-flex-direction-column">
             <p class="card-header-title is-size-3">
               <%= @post.title.titleize %>
             </p>
+
+            <% if member_signed_in? %>
+              <div class="subtitle is-6 ml-4">
+                by: <%= link_to "#{@post.member.name}", edit_registration_path(@post.member), id: 'showPostSubtitle', class: 'subtitle-link' %>
+              </div>
+            <% end %>
           </header>
           
           <div class="card-content">
@@ -15,10 +21,13 @@
 
         </div>
 
-        <div class="control is-pulled-right">
-          <div class="field">
-            <%= link_to 'Edit', edit_post_path(@post), class: 'button small is-primary' %>
-            <%= link_to 'Back', posts_path, class: 'button small is-success' %>
+          <div class="field is-pulled-right py-2">
+            <div class="control py-2">
+              <% if member_signed_in? && current_member == @post.member %>
+                <%= link_to 'Edit', edit_post_path(@post), class: 'button small is-primary' %>                
+              <% end %>
+              <%= link_to 'Back', posts_path, class: 'button small is-success' %>
+            </div>
           </div>
         </div>
 

@@ -6,8 +6,10 @@
         <hr>
         <%= render 'form', post: @post %>
 
-        <%= link_to 'Show', @post %> |
-        <%= link_to 'Back', posts_path %>
+        <div class="field is-pulled-right py-2">
+          <%= link_to 'Show', @post, class: 'button small is-primary' %>
+          <%= link_to 'Back', posts_path, class: 'button small is-success' %>
+        </div>
 
       </div>
     </div>

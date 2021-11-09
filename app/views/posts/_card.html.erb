@@ -1,0 +1,38 @@
+<div class="block">
+  <div class="card post-card">
+
+    <header class="card-header is-flex-direction-column">
+      <div class="level m-0 p-0">
+        <div class="level-left">
+          <div class="level-item">
+            <%= link_to "#{post.title.titleize}", post,
+                        class: 'post-header-link title is-4 m-2' %>
+            <!--<h4 class="title is-4 m-2 "><%= post.title %></h4>-->
+          </div>
+        </div>
+        <div class="level-right mr-1">
+          <%= link_to post, class: 'level-item card-icon' do %>
+            <span class="icon"><i class="fa fa-link"></i></span>
+          <% end %>
+        <% if member_signed_in? && post.member == current_member %>
+            <%= link_to edit_post_path(post), class: 'level-item card-icon' do %>
+              <span class="icon"><i class="fa fa-pencil"></i></span>
+            <% end %>
+            <%= link_to post, method: :delete, class: 'level-item card-icon' do %>
+              <span class="icon"><i class="fa fa-trash"></i></span>
+            <% end %>
+        <% end %>
+        </div>
+      </div>
+      <% if member_signed_in? %>
+        <div class="ml-2 mb-1 subtitle is-6">
+          by: <%= post.member.name %>
+        </div>
+      <% end %>
+    </header>
+
+    <div class="card-content">
+      <%= post.body %>
+    </div>
+  </div>
+</div>
