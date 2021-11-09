@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'posts#index'
-
-  resources :posts
   devise_for :members
+  resources :posts
+  
+  root 'posts#index'
 end
