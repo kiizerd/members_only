@@ -1,13 +1,8 @@
-<%= javascript_pack_tag 'navbar' %>
-
 <nav class='navbar'>
   <div class="navbar-brand">      
-    <%= link_to root_path, class: 'navbar-item' do %>
-        <h1 class='title is-5'>Member's Club</h1>
-      <% if member_signed_in? %>
-        
-      <% end %>
-    <% end %>
+    <div class="navbar-item">
+      <%= link_to "Member's Club", root_path, class: 'title is-5' %>
+    </div>    
     <div id="navBurger" class="navbar-burger burger" data-target='navbar'>
       <span></span>
       <span></span>
@@ -18,7 +13,7 @@
   <div id="navbar" class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="field mr-5">
+        <div class="field m-1 pr-4">
           <p class="control">
           <% if cookies[:theme] == "light" %>
             <%= link_to root_path(theme: 'dark'), class: 'card-icon' do %>
@@ -35,7 +30,7 @@
           <% end %>
           </p>
         </div>
-        <div class="field mx-4">
+        <div class="field m-1">
           <p class="control">
             <%= link_to 'New Post', new_post_path, class: 'button is-info is-inverted' %>
           </p>
@@ -50,10 +45,10 @@
             </p>
           <% else %>
             <p class="control">
-              <%= link_to 'Sign In', new_member_session_path, class: 'button is-success' %>
+              <%= link_to 'Sign In', new_member_session_path, class: 'button is-info' %>
             </p>
             <p class="control">
-              <%= link_to 'Sign Up', new_member_registration_path, class: 'button is-success' %>
+              <%= link_to 'Sign Up', new_member_registration_path, class: 'button is-info' %>
             </p>
           <% end %>
         </div>

@@ -18,14 +18,16 @@
             <%= link_to edit_post_path(post), class: 'level-item card-icon' do %>
               <span class="icon"><i class="fa fa-pencil"></i></span>
             <% end %>
-            <%= link_to post, method: :delete, class: 'level-item card-icon' do %>
+            <%= link_to post, method: :delete,
+                        class: 'level-item card-icon',
+                        data: { confirm: "Are you sure?" } do %>
               <span class="icon"><i class="fa fa-trash"></i></span>
             <% end %>
         <% end %>
         </div>
       </div>
       <% if member_signed_in? %>
-        <div class="ml-2 mb-1 subtitle is-6">
+        <div class="ml-4 mb-1 subtitle is-6">
           by: <%= post.member.name %>
         </div>
       <% end %>

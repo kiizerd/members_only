@@ -3,13 +3,13 @@
     <div class="columns is-centered">
       <div class="column is-7">
         <div class="card">
-          <header class="card-header py-2 is-primary is-flex-direction-column">
-            <p class="card-header-title is-size-3">
+          <header class="card-header is-primary is-flex-direction-column">
+            <p class="card-header-title ml-2 p-0 is-size-3">
               <%= @post.title.titleize %>
             </p>
 
             <% if member_signed_in? %>
-              <div class="subtitle is-6 ml-4">
+              <div class="subtitle is-6 ml-4 mb-1">
                 by: <%= link_to "#{@post.member.name}", edit_registration_path(@post.member), id: 'showPostSubtitle', class: 'subtitle-link' %>
               </div>
             <% end %>
