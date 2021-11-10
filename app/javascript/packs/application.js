@@ -20,18 +20,29 @@ const toggleNav = function() {
   btn.classList.toggle('is-active');
 }
 
-// Hide Flashes after 5 seconds
+const deleteFlash = function() {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    const $notification = $delete.parentNode;
+  
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+}
+
 document.addEventListener('turbolinks:load', function() {
   
+  // Toggles navbar on click (for mobile)
   const btn = document.querySelector('.navbar-burger');
   btn.addEventListener('click', toggleNav);
-
+  
+  // Hide Flashes after 5 seconds
   setInterval(function() {
     const notification = document.querySelector('.notification');
     if (notification) {
-      notification.style.display = 'none';
-    } else {
-      return;
+      notification.parentNode.removeChild(notification);
     }
   }, 5000);
+
+  deleteFlash();
 })

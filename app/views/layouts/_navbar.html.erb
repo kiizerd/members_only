@@ -15,6 +15,7 @@
       <div class="navbar-item">
         <div class="field m-1 pr-4">
           <p class="control">
+          <% cookies[:theme] = cookies[:theme] || 'light' %>
           <% if cookies[:theme] == "light" %>
             <%= link_to root_path(theme: 'dark'), class: 'card-icon' do %>
               <span class="icon">

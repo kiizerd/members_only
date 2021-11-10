@@ -5,7 +5,9 @@
       <div class="level m-0 p-0">
         <div class="level-left">
           <div class="level-item">
-            <%= link_to "#{post.title.titleize}", post,
+            <% title_string = post.title.titleize %>
+            <% title_string = title_string.size > 18 ? title_string.truncate(20) : title_string %>
+            <%= link_to title_string, post,
                         class: 'post-header-link title is-4 m-2' %>
             <!--<h4 class="title is-4 m-2 "><%= post.title %></h4>-->
           </div>

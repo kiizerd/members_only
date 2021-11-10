@@ -4,8 +4,9 @@
 
 .notification-wrapper {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 1.5vh;
+  right: 5vw;
+  z-index: 150;
 }
 
 span.error {
