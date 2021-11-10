@@ -1,0 +1,13 @@
+.notification:not(:last-child) {
+  margin-bottom: -8px;
+}
+
+.notification-wrapper {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+span.error {
+  color: red;
+}

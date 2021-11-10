@@ -1,0 +1,32 @@
+// Only rules specific to "Dark" mode
+body.dark {
+  .wrapper {
+    background-color: #393a3b;
+  }
+   
+  nav.navbar {
+    background: rgb(252,147,69);
+    background: linear-gradient(336deg, rgba(252,147,69,1) 0%, rgba(228,106,146,1) 50%, rgba(169,95,179,1) 100%); 
+  }
+  
+  header.card-header {
+    background-color: #ca65a1;
+  }
+
+  .subtitle {
+    color: rgb(255, 250, 250);
+  }
+
+  p, label, .title  {
+    color: rgb(255, 250, 250);
+  }
+
+  a {
+    color: #f0f0f0;
+  }
+  
+  a:hover {
+    color: rgb(211, 211, 211);
+    background-color: transparent;
+  }
+}

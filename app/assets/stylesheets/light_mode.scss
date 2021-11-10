@@ -1,0 +1,24 @@
+// Only rules specific to "Light" mode
+body.light {
+  .wrapper {
+    background-color: #d7e3fc;
+  }
+
+  nav.navbar {
+    background-color: #7ec4cf;
+  }
+  
+  header.card-header {
+    background-color: #7ec4cf;
+  }
+
+  a {
+    color: #363636;    
+  }
+  
+  a:hover {
+    color: #4a4b4c;
+    background-color: transparent;
+    // text-decoration: underline;
+  }
+}
